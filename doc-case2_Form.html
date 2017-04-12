@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" dir="">
+    <head>
+
+        <title>Prescription - Bayanno Hospital Management System</title>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Ekattor School Manager Pro - Creativeitem" />
+        <meta name="author" content="Creativeitem" />
+
+
+
+        <link rel="stylesheet" href="assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
+<link rel="stylesheet" href="assets/css/font-icons/entypo/css/entypo.css">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic">
+<link rel="stylesheet" href="assets/css/bootstrap.css">
+<link rel="stylesheet" href="assets/css/neon-core.css">
+<link rel="stylesheet" href="assets/css/neon-theme.css">
+<link rel="stylesheet" href="assets/css/neon-forms.css">
+<link rel="stylesheet" href="assets/css/custom.css">
+<link rel="stylesheet" href="assets/css/skins/green.css">
+
+<script src="assets/js/jquery-1.11.0.min.js"></script>
+
+        <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link rel="shortcut icon" href="assets/images/favicon.png">
+<link rel="stylesheet" href="assets/css/font-icons/font-awesome/css/font-awesome.min.css">
+
+
+
+
+<link rel="stylesheet" href="assets/js/vertical-timeline/css/component.css">
+<link rel="stylesheet" href="assets/js/datatables/responsive/css/datatables.responsive.css">
+
+<!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+<script src="script.js"></script>-->
+
+<script>
+    function checkDelete()
+    {
+        var chk=confirm("Are You Sure To Delete This !");
+        if(chk)
+        {
+          return true;
+        }
+        else{
+            return false;
+        }
+    }
+</script>
+
+<style>
+    .tile-stats .icon
+    {
+        bottom: 30px;
+    }
+</style>
+    </head>
+    <body class="page-body" >
+        <div class="page-container " >
+            <div class="sidebar-menu">
+    <header class="logo-env" >
+
+        <!-- logo -->
+        <div class="logo" style="">
+            <a href="http://creativeitem.com/demo/bayanno/">
+                <img src="assets/images/logo.png"  style="max-height:60px;"/>
+            </a>
+        </div>
+
+        <!-- logo collapse icon -->
+        <div class="sidebar-collapse" style="">
+            <a href="#" class="sidebar-collapse-icon with-animation">
+
+                <i class="entypo-menu"></i>
+            </a>
+        </div>
+
+        <!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+        <div class="sidebar-mobile-menu visible-xs">
+            <a href="#" class="with-animation">
+                <i class="entypo-menu"></i>
+            </a>
+        </div>
+    </header>
+    <div class="sidebar-user-info">
+
+        <div class="sui-normal">
+            <a href="#" class="user-link">
+                <img src="http://creativeitem.com/demo/bayanno/uploads/doctor_image/5.jpg" alt="" class="img-circle" style="height:44px;">
+
+                <span>Welcome,</span>
+                <strong>Jana Stafford                </strong>
+            </a>
+        </div>
+
+        <div class="sui-hover inline-links animate-in"><!-- You can remove "inline-links" class to make links appear vertically, class "animate-in" will make A elements animateable when click on user profile -->
+            <a href="http://creativeitem.com/demo/bayanno/index.php?doctor/manage_profile">
+                <i class="entypo-pencil"></i>
+                Edit Profile            </a>
+
+            <a href="http://creativeitem.com/demo/bayanno/index.php?doctor/manage_profile">
+                <i class="entypo-lock"></i>
+                Change Password            </a>
+
+            <span class="close-sui-popup">×</span><!-- this is mandatory -->
+        </div>
+    </div>
+
+
+    <div style="border-top:1px solid rgba(69, 74, 84, 0.7);"></div>
+    <ul id="main-menu" class="">
+        <!-- add class "multiple-expanded" to allow multiple submenus to open -->
+        <!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+
+        <!-- DASHBOARD -->
+        <li class=" ">
+            <a href="http://creativeitem.com/demo/bayanno/index.php?doctor">
+                <i class="fa fa-desktop"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+
+        <li class=" ">
+                <a href="#">
+                    <i class="fa fa-edit"></i>
+                    <span>Appointment</span>
+                </a>
+                <ul>
+                    <li class=" ">
+                        <a href="http://creativeitem.com/demo/bayanno/index.php?doctor/appointment">
+                            <i class="entypo-dot"></i>
+                            <span>Appointment List</span>
+                        </a>
+                    </li>
+                    <li class=" ">
+                        <a href="http://creativeitem.com/demo/bayanno/index.php?doctor/appointment_requested">
+                            <i class="entypo-dot"></i>
+                            <span>Requested Appointments</span>
+                        </a>
+                    </li>
+                </ul>
+        </li>
+
+        <li class="active ">
+            <a href="http://creativeitem.com/demo/bayanno/index.php?doctor/prescription">
+                <i class="fa fa-stethoscope"></i>
+                <span>Prescription</span>
+            </a>
+        </li>
+
+        <li class=" ">
+                <a href="http://creativeitem.com/demo/bayanno/index.php?doctor/patient">
+                    <i class="fa fa-user"></i>
+                    <span>Patient</span>
+                </a>
+        </li>
+
+        <li class=" ">
+            <a href="http://creativeitem.com/demo/bayanno/index.php?doctor/bed_allotment">
+                <i class="fa fa-hdd-o"></i>
+                <span>Bed Allotment</span>
+            </a>
+        </li>
+
+        <li class=" ">
+            <a href="http://creativeitem.com/demo/bayanno/index.php?doctor/blood_bank">
+                <i class="fa fa-tint"></i>
+                <span>Blood Bank</span>
+            </a>
+        </li>
+
+        <li class=" ">
+            <a href="http://creativeitem.com/demo/bayanno/index.php?doctor/report">
+                <i class="fa fa-hospital-o"></i>
+                <span>Report</span>
+            </a>
+        </li>
+
+        <!-- PAYROLL -->
+        <li class=" ">
+            <a href="http://creativeitem.com/demo/bayanno/index.php?doctor/payroll_list">
+                <span><i class="entypo-tag"></i> Payroll</span>
+            </a>
+        </li>
+
+        <!-- MESSAGE -->
+        <li class=" ">
+            <a href="http://creativeitem.com/demo/bayanno/index.php?doctor/message">
+                <i class="entypo-mail"></i>
+                <span>Message</span>
+            </a>
+        </li>
+
+        <li class=" ">
+            <a href="http://creativeitem.com/demo/bayanno/index.php?doctor/manage_profile">
+                <i class="entypo-lock"></i>
+                <span>Profile</span>
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+            <div class="main-content">
+
+                <div class="row">
+    <div class="col-md-12 col-sm-12 clearfix" style="text-align:center;">
+        <h2 style="font-weight:200; margin:0px;">Bayanno Hospital Management System</h2>
+    </div>
+
+    <!-- Raw Links -->
+    <div class="col-md-12 col-sm-12 clearfix ">
+
+        <ul class="list-inline links-list pull-left">
+            <!-- Language Selector -->
+            <li class="dropdown language-selector">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-close-others="true">
+                    <i class="entypo-user"></i> doctor                </a>
+            </li>
+
+            <!-- Message Notifications -->
+                        <li class="notifications dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                    <i class="entypo-mail"></i>
+                                            <span class="badge badge-info">2</span>
+                                    </a>
+
+                <ul class="dropdown-menu">
+                    <li>
+                        <ul class="dropdown-menu-list scroller">
+
+
+                                                            <li class="active">
+                                    <a href="http://creativeitem.com/demo/bayanno/index.php?doctor/message/message_read/6ce697ba0128227">
+                                        <span class="image pull-right">
+                                            <img src="http://creativeitem.com/demo/bayanno/uploads/patient_image/127.jpg" height="48" class="img-circle" />
+                                        </span>
+
+                                        <span class="line">
+                                            <strong>
+                                                Dana Glenn                                            </strong>
+                                            - 15 Mar, 2015                                        </span>
+
+                                        <span class="line desc small">
+                                            <!-- preview of the last unread message substring -->
+                                            Should i come for check-up?<br>                                        </span>
+                                    </a>
+                                </li>
+                                                    </ul>
+                    </li>
+
+                    <li class="external">
+                        <a href="http://creativeitem.com/demo/bayanno/index.php?doctor/message">
+                            View All Messages                        </a>
+                    </li>
+                </ul>
+            </li>
+                    </ul>
+
+
+        <ul class="list-inline links-list pull-right">
+
+            <li>
+                <a href="http://creativeitem.com/demo/bayanno/index.php?login/logout">
+                    Log Out <i class="entypo-logout right"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<hr style="margin-top:0px;" />
+                <h3 style="margin:20px 0px; color:#818da1; font-weight:200;">
+                    <i class="entypo-right-circled"></i>
+                    Prescription                </h3>
+
+                <button onclick="showAjaxModal('http://creativeitem.com/demo/bayanno/index.php?modal/popup/add_prescription/');"
+    class="btn btn-primary pull-right">
+        Add Prescription</button>
+<div style="clear:both;"></div>
+<br>
+
+<form>
+
+DOCTOR'S (CASE 2)Form 2 <br><br>
+
+Patient Name : <br>
+<input type="text" name="Patient name" placeholder="..."  id="c-form- " required="required"><br>
+
+ Aadhar/UIN :<br>
+<input type="text" name="Aadhar/UIN" placeholder="Aadhar/UIN..."  id="c-form- " required="required"><br>
+
+ Choose File to Upload :(Please Upload Anyone of the Below)<br><br>
+
+ Prescription :<br>
+ <input type="file" name="precription file" placeholder="prescription..."  id="c-form- " ><br>
+
+ Report :<br>
+ <input type="file" name="Report file" placeholder="..."  id="c-form- " ><br>
+
+ Others :<br>
+ <input type="file" name="file" placeholder="..."  id="c-form-" ><br><br>
+
+<button type="submit"> Submit </button><br><br>
+
+</form>
+
+<script type="text/javascript">
+    jQuery(window).load(function ()
+    {
+        var $ = jQuery;
+
+        $("#table-2").dataTable({
+            "sPaginationType": "bootstrap",
+            "sDom": "<'row'<'col-xs-3 col-left'l><'col-xs-9 col-right'<'export-data'T>f>r>t<'row'<'col-xs-3 col-left'i><'col-xs-9 col-right'p>>"
+        });
+
+        $(".dataTables_wrapper select").select2({
+            minimumResultsForSearch: -1
+        });
+
+        // Highlighted rows
+        $("#table-2 tbody input[type=checkbox]").each(function (i, el)
+        {
+            var $this = $(el),
+                    $p = $this.closest('tr');
+
+            $(el).on('change', function ()
+            {
+                var is_checked = $this.is(':checked');
+
+                $p[is_checked ? 'addClass' : 'removeClass']('highlight');
+            });
+        });
+
+        // Replace Checboxes
+        $(".pagination a").click(function (ev)
+        {
+            replaceCheckboxes();
+        });
+    });
+</script>
+                <!-- Footer -->
+<footer class="main">
+	&copy; 2014
+	<a href="http://creativeitem.com"
+    	target="_blank">Creativeitem</a>
+</footer>
+
+            </div>
+
+        </div>
+            <script type="text/javascript">
+	function showAjaxModal(url)
+	{
+		// SHOWING AJAX PRELOADER IMAGE
+		jQuery('#modal_ajax .modal-body').html('<div style="text-align:center;margin-top:200px;"><img src="assets/images/preloader.gif" style="height:25px;" /></div>');
+
+		// LOADING THE AJAX MODAL
+		jQuery('#modal_ajax').modal('show', {backdrop: 'true'});
+
+		// SHOW AJAX RESPONSE ON REQUEST SUCCESS
+		$.ajax({
+			url: url,
+			success: function(response)
+			{
+				jQuery('#modal_ajax .modal-body').html(response);
+			}
+		});
+	}
+	</script>
+
+    <!-- (Ajax Modal)-->
+    <div class="modal fade" id="modal_ajax">
+        <div class="modal-dialog" >
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Bayanno Hospital Management System</h4>
+                </div>
+
+                <div class="modal-body" style="height:500px; overflow:auto;">
+
+
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script type="text/javascript">
+	function confirm_modal(delete_url , post_refresh_url)
+	{
+		$('#preloader-delete').html('');
+		jQuery('#modal_delete').modal('show', {backdrop: 'static'});
+		document.getElementById('delete_link').setAttribute("onClick" , "delete_data('" + delete_url + "' , '" + post_refresh_url + "')" );
+		document.getElementById('delete_link').focus();
+	}
+	</script>
+
+    <!-- (Normal Modal)-->
+    <div class="modal fade" id="modal_delete">
+        <div class="modal-dialog">
+            <div class="modal-content" style="margin-top:100px;">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" style="text-align:center;">Are you sure to delete this information ?</h4>
+                </div>
+
+
+                <div class="modal-footer" style="margin:0px; border-top:0px; text-align:center;">
+                	<span id="preloader-delete"></span>
+                    </br>
+                	  <button type="button" class="btn btn-danger" id="delete_link" onClick="">Delete</button>
+                    <button type="button" class="btn btn-info" data-dismiss="modal" id="delete_cancel_link">Cancel</button>
+
+                </div>
+            </div>
+        </div>
+    </div>        <link rel="stylesheet" href="assets/js/daterangepicker/daterangepicker-bs3.css">
+
+<link rel="stylesheet" href="assets/js/selectboxit/jquery.selectBoxIt.css">
+
+<link rel="stylesheet" href="assets/js/wysihtml5/bootstrap-wysihtml5.css">
+<link rel="stylesheet" href="assets/js/selectboxit/jquery.selectBoxIt.css">
+<link rel="stylesheet" href="assets/js/datatables/responsive/css/datatables.responsive.css">
+<link rel="stylesheet" href="assets/js/select2/select2-bootstrap.css">
+<link rel="stylesheet" href="assets/js/select2/select2.css">
+
+<!-- Bottom Scripts -->
+<script src="assets/js/gsap/main-gsap.js"></script>
+<script src="assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/js/joinable.js"></script>
+<script src="assets/js/resizeable.js"></script>
+<script src="assets/js/neon-api.js"></script>
+<script src="assets/js/bootstrap-switch.min.js"></script>
+<script src="assets/js/toastr.js"></script>
+<script src="assets/js/jquery.validate.min.js"></script>
+<script src="assets/js/fullcalendar/fullcalendar.min.js"></script>
+<script src="assets/js/bootstrap-datepicker.js"></script>
+<script src="http://creativeitem.com/demo/bayanno/assets/js/bootstrap-timepicker.min.js"></script>
+<script src="assets/js/fileinput.js"></script>
+<script src="assets/js/wysihtml5/wysihtml5-0.4.0pre.min.js"></script>
+<script src="assets/js/wysihtml5/bootstrap-wysihtml5.js"></script>
+<script src="assets/js/jquery.multi-select.js"></script>
+<script src="assets/js/jquery.knob.js"></script>
+<script src="assets/js/selectboxit/jquery.selectBoxIt.min.js"></script>
+<script src="assets/js/jquery.inputmask.bundle.min.js"></script>
+<script src="assets/js/daterangepicker/moment.min.js"></script>
+<script src="assets/js/daterangepicker/daterangepicker.js"></script>
+
+<link rel="stylesheet" href="assets/js/dropzone/dropzone.css">
+<script src="assets/js/dropzone/dropzone.js"></script>
+
+<script src="assets/js/jquery.dataTables.min.js"></script>
+<script src="assets/js/datatables/TableTools.min.js"></script>
+<script src="assets/js/dataTables.bootstrap.js"></script>
+<script src="assets/js/datatables/jquery.dataTables.columnFilter.js"></script>
+<script src="assets/js/datatables/lodash.min.js"></script>
+<script src="assets/js/datatables/responsive/js/datatables.responsive.js"></script>
+<script src="assets/js/select2/select2.min.js"></script>
+
+<script src="assets/js/neon-calendar.js"></script>
+<script src="assets/js/neon-chat.js"></script>
+<script src="assets/js/neon-custom.js"></script>
+<script src="assets/js/neon-demo.js"></script>
+<script src="assets/js/neon-notes.js"></script>
+<script src="assets/js/jquery.form.js"></script>
+
+<script src="assets/js/ajax-form-submission.js"></script>
+
+<script>
+    $(".html5editor").wysihtml5();
+</script>
+
+
+
+    </body>
+</html>
